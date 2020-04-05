@@ -5,16 +5,7 @@
     </div>
   </mat-drawer>
   <mat-drawer-content [@openCloseSidenavContent]="isOpen ? 'open' : 'closed'">
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span>Section Title</span>
-
-        <!-- This fills the remaining space of the current row -->
-        <span class="fill-remaining-space"></span>
-
-        <span>Right Aligned Text</span>
-      </mat-toolbar-row>
-    </mat-toolbar>
+    <app-toolbar></app-toolbar>
     <div class="mat-content">
       <ng-content></ng-content>
     </div>
