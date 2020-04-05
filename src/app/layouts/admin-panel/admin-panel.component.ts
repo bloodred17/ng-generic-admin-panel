@@ -18,8 +18,8 @@ export class AdminPanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggle() {
-    this.isOpen = !this.isOpen;
+  getState($event) {
+    this.isOpen = $event;
   }
 
 }

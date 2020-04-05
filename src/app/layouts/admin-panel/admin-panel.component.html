@@ -1,24 +1,7 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="false">
   <mat-drawer #drawer [mode]="'side'" [opened]="true" [@openCloseSidenav]="isOpen ? 'open' : 'closed'">
     <div class="mat-drawer-nav">
-      <div class="nav-heading">
-        <button type="button" aria-label="Toggle nav" mat-icon-button (click)="toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-        <span>Application Title</span>
-      </div>
-      <div class="nav-menu">
-        <ul>
-          <li><a href="#"><span>Item 1</span></a></li>
-          <li><a href="#"><span>Item 2</span></a></li>
-          <li><a href="#"><span>Item 3</span></a></li>
-          <li><a href="#"><span>Item 4</span></a></li>
-          <li><a href="#"><span>Item 5</span></a></li>
-        </ul>
-      </div>
-      <div class="nav-footer">
-        <span>This is nav-footer</span>
-      </div>
+      <app-navigation (drawerState)="getState($event)"></app-navigation>
     </div>
   </mat-drawer>
   <mat-drawer-content [@openCloseSidenavContent]="isOpen ? 'open' : 'closed'">
