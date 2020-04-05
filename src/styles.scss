@@ -1,3 +1,4 @@
+@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 /* You can add global styles to this file, and also import other style files */
 @import './assets/scss/material/_variables.scss';
 
@@ -10,3 +11,110 @@ body {
   flex: 1 1 auto;
 }
 
+// Vendor Prefixing
+@mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  @if $default {
+    #{$property}: #{$value};
+  }
+}
+
+// spacing
+$space_amounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $space_amounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+// Centering Block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin center-vertically {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+}
+
+// Breakpoints
+$breakpoint-small: 600px;
+$breakpoint-med-small: 960px;
+$breakpoint-med: 1175px;
+
+@mixin screen($size, $type: max, $pixels: $breakpoint-small) {
+  @if $size == 'small' {
+    @media screen and ($type + -width: $breakpoint-small) {
+      @content;
+    }
+  }
+  @else if $size == 'med-small' {
+    @media screen and ($type + -width: $breakpoint-med-small) {
+      @content;
+    }
+  }
+  @else if $size == 'med' {
+    @media screen and ($type + -width: $breakpoint-med) {
+      @content;
+    }
+  }
+  @else if $size == 'large' {
+    @media screen and ($type + -width: $breakpoint-med) {
+      @content;
+    }
+  }
+  @else if $size == 'custom' {
+    @media screen and ($type + -width: $pixels + px) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+// Grid
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+// Theming
+@mixin theme($name, $color) {
+  // Define colors in your theme
+  $primary: $color;
+  $secondary: lighten(adjust-hue($color, 20), 10%);
+  // Add your classes with css colors added
+  .#{$name} {
+    .element {
+      color: $primary;
+    }
+    .other-element {
+      background: $secondary;
+    }
+  }
+}

@@ -1,8 +1,6 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="false">
   <mat-drawer #drawer [mode]="'side'" [opened]="true" [@openCloseSidenav]="isOpen ? 'open' : 'closed'">
-    <div class="mat-drawer-nav">
-      <app-navigation (drawerState)="getState($event)"></app-navigation>
-    </div>
+     <app-navigation (drawerState)="getState($event)"></app-navigation>
   </mat-drawer>
   <mat-drawer-content [@openCloseSidenavContent]="isOpen ? 'open' : 'closed'">
     <app-toolbar></app-toolbar>
