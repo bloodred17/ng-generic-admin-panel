@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrimeButtonsComponent } from './prime-buttons.component';
+import { NgxComponentsComponent } from './ngx-components.component';
 
-describe('PrimeButtonsComponent', () => {
-  let component: PrimeButtonsComponent;
-  let fixture: ComponentFixture<PrimeButtonsComponent>;
+describe('NgxComponentsComponent', () => {
+  let component: NgxComponentsComponent;
+  let fixture: ComponentFixture<NgxComponentsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrimeButtonsComponent ]
+      declarations: [ NgxComponentsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrimeButtonsComponent);
+    fixture = TestBed.createComponent(NgxComponentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

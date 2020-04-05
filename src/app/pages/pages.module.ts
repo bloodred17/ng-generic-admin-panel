@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrimeButtonsComponent } from './prime-buttons/prime-buttons.component';
-import { ButtonModule } from 'primeng/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgxComponentsComponent } from './ngx-components/ngx-components.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @NgModule({
-  declarations: [PrimeButtonsComponent],
+  declarations: [NgxComponentsComponent],
     imports: [
       CommonModule,
-      BrowserAnimationsModule,
-      ButtonModule
+      ButtonsModule.forRoot()
     ]
 })
 export class PagesModule { }

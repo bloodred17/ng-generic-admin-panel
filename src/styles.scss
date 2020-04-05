@@ -1,4 +1,4 @@
-@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+//@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 /* You can add global styles to this file, and also import other style files */
 @import './assets/scss/material/_variables.scss';
 
@@ -89,19 +89,19 @@ $breakpoint-med: 1175px;
   }
 }
 
-// Grid
-$default-grid-columns: 12;
-$default-grid-gutter: 2%;
-
-.grid {
-  @include grid($gutter: $default-grid-gutter);
-
-  @for $i from 1 through $default-grid-columns {
-    > .grid__col-#{$i} {
-      @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
-    }
-  }
-}
+//// Grid
+//$default-grid-columns: 12;
+//$default-grid-gutter: 2%;
+//
+//.grid {
+//  @include grid($gutter: $default-grid-gutter);
+//
+//  @for $i from 1 through $default-grid-columns {
+//    > .grid__col-#{$i} {
+//      @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+//    }
+//  }
+//}
 
 // Theming
 @mixin theme($name, $color) {

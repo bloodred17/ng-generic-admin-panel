@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PrimeButtonsComponent} from './pages/prime-buttons/prime-buttons.component';
+import {NgxComponentsComponent} from './pages/ngx-components/ngx-components.component';
 
 
 const routes: Routes = [
-  { path: 'prime-button', component: PrimeButtonsComponent }
+  { path: 'ngx', component: NgxComponentsComponent }
 ];
 
 @NgModule({
