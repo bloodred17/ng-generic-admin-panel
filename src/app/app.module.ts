@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import {FormsModule} from '@angular/forms';
+import {LayoutsModule} from './layouts/layouts.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
-    FormsModule
+    FormsModule,
+    LayoutsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
